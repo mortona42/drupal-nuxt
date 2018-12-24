@@ -1,0 +1,34 @@
+name: drupal-nuxt
+recipe: drupal8
+config:
+  webroot: drupal/web
+  php: "7.2"
+
+services:
+  nuxt:
+    type: node
+    ssl: true
+    overrides:
+      services:
+        ports:
+          - "3002:3000"
+    globals:
+      gulp-cli: "latest"
+      postcss-cli: "latest"
+      create-nuxt-app: "latest"
+    command: npm run dev
+
+tooling:
+  npm:
+    service: nuxt
+  npx:
+    service: nuxt
+  gulp:
+    service: nuxt
+
+proxy:
+  appserver:
+    - drupal.drupal-nuxt.lndo.site
+  nuxt:
+    - drupal-nuxt.lndo.site:3002
+
