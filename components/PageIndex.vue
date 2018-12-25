@@ -1,6 +1,6 @@
 <template>
   <div class="PageIndex">
-    <div v-for="page in pages.data">
+    <div v-for="page in pages">
       <PageTitleLink v-bind="{page}" />
     </div>
   </div>
@@ -15,8 +15,8 @@ export default {
   },
   props: {
     pages: {
-      type: Object,
-      default: () => {}
+      type: Array,
+      default: () => []
     }
   }
 };

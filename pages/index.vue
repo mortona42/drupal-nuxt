@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <Menus v-bind="{menus}"/>
+      <Menus v-bind="{ menus }" />
     </div>
     <div>
       <logo/>
@@ -51,11 +51,11 @@ export default {
       loadPages(),
     ]).then(values => {
       return {
-        menus: values[0].data,
-        pages: values[1].data,
+        menus: values[0],
+        pages: values[1],
       };
     });
-  },
+  }
 }
 </script>
 

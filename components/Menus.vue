@@ -1,6 +1,6 @@
 <template>
   <nav>
-    {{menus}}
+    <span v-for="link in menus.attributes.field_links">{{ link.title }}</span>
   </nav>
 </template>
 
