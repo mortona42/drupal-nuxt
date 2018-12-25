@@ -11,7 +11,7 @@ services:
     overrides:
       services:
         ports:
-          - "3002:3000"
+          - "3000:3000"
     globals:
       gulp-cli: "latest"
       postcss-cli: "latest"
@@ -30,5 +30,5 @@ proxy:
   appserver:
     - drupal.drupal-nuxt.lndo.site
   nuxt:
-    - drupal-nuxt.lndo.site:3002
+    - drupal-nuxt.lndo.site:3000
 
