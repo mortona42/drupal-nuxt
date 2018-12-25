@@ -1,6 +1,9 @@
 <template>
   <section class="container">
     <div>
+      <Menus v-bind="{menus}"/>
+    </div>
+    <div>
       <logo/>
       <h1 class="title">
         Drupal/Nuxt
@@ -20,7 +23,7 @@
       </div>
       <div class="pages">
         <h3>Pages</h3>
-        <PageIndex v-bind="{pages}"/>
+        <PageIndex v-bind="{ pages }" />
       </div>
     </div>
   </section>
@@ -29,23 +32,30 @@
 <script>
 import Logo from '~/components/Logo.vue';
 import PageIndex from '~/components/PageIndex.vue';
+import Menus from '~/components/Menus.vue';
 
 import {
   loadPages,
+  mainMenu
 } from '~/lib/api';
 
 export default {
   components: {
     Logo,
-    PageIndex
+    PageIndex,
+    Menus
   },
   async asyncData({ params }) {
-    let pages = [];
-    pages = await loadPages();
-    return {
-      pages: pages.data
-    };
-  }
+    return Promise.all([
+      mainMenu(),
+      loadPages(),
+    ]).then(values => {
+      return {
+        menus: values[0].data,
+        pages: values[1].data,
+      };
+    });
+  },
 }
 </script>
 
