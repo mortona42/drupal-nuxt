@@ -1,0 +1,38 @@
+uuid: 9aaddde0-5d11-4a8d-8011-2b7fd12dc0ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.site
+    - field.storage.block_content.field_logo
+  module:
+    - image
+id: block_content.site.field_logo
+field_name: field_logo
+entity_type: block_content
+bundle: site
+label: Logo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: logos
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: 5mb
+  max_resolution: 1000x1000
+  min_resolution: 50x50
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

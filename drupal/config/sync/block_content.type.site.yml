@@ -1,0 +1,8 @@
+uuid: 735bd9d4-017a-4121-a9f7-250fc4e6875f
+langcode: en
+status: true
+dependencies: {  }
+id: site
+label: Site
+revision: 0
+description: 'Site instance.'
