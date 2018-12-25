@@ -24,4 +24,6 @@ $ lando npm install
 $ lando npm run dev
 ```
 
-[Nuxt.js docs](https://nuxtjs.org).
+## Help
+Feel free to fork and do things differently, or post a question in the issues.
+

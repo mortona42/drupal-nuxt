@@ -10,11 +10,11 @@
       </h2>
       <div class="links">
         <a
-          href="https://nuxtjs.org/"
+          href="https://github.com/mortona42/drupal-nuxt/wiki"
           target="_blank"
           class="button--green">Documentation</a>
         <a
-          href="https://github.com/nuxt/nuxt.js"
+          href="https://github.com/mortona42/drupal-nuxt"
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
