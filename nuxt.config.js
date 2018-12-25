@@ -1,3 +1,24 @@
+const serverBaseUrl = 'http://drupal.drupal-nuxt.lndo.site';
+const serverFilesUrl = 'http://drupal.drupal-nuxt.lndo.site';
+
+export default {
+  env: {
+    serverBaseUrl,
+    serverApiUrl: serverBaseUrl + '/jsonapi',
+    serverFilesUrl,
+  },
+  head: {
+    meta: [
+      { name: 'viewport', content: 'width=device-width, user-scalable=no' },
+    ],
+    link: [
+      { rel: 'stylesheet', type: 'text/css', href: '/css/style.css' },
+    ],
+  },
+  // page loading progress bar color
+  loading: { color: '#3B8070' },
+};
+
 const pkg = require('./package')
 
 module.exports = {
