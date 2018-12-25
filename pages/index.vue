@@ -18,7 +18,10 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
-      <PageIndex v-bind="{pages}"/>
+      <div class="pages">
+        <h3>Pages</h3>
+        <PageIndex v-bind="{pages}"/>
+      </div>
     </div>
   </section>
 </template>
@@ -39,7 +42,6 @@ export default {
   async asyncData({ params }) {
     let pages = [];
     pages = await loadPages();
-    console.log(pages.data);
     return {
       pages: pages.data
     };
@@ -76,6 +78,6 @@ export default {
 }
 
 .links {
-  padding-top: 15px;
+  padding: 15px;
 }
 </style>
