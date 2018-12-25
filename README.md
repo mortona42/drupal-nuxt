@@ -1,22 +1,27 @@
-# Drupal/Nuxt
+# Introduction
+Get started with Nuxt development, using Drupal as a backend.
+This starter uses [Lando](https://github.com/lando/lando/releases) for local development.
 
-> Drupal/Nuxt starter.
-
-## Build Setup
+# Build Setup
 
 ``` bash
-# install dependencies
-$ yarn install
+# Start Lando
+$ lando start
 
-# serve with hot reload at localhost:3000
-$ yarn run dev
+# Prepare Drupal
+$ cd drupal
+$ lando composer install
 
-# build for production and launch server
-$ yarn run build
-$ yarn start
+# Install Drupal
+Visit https://drupal.drupal-nuxt.lndo.site
+Follow installation instructions
+Create a page or two.
 
-# generate static project
-$ yarn run generate
+# Install Nuxt
+$ lando npm install
+
+# Run Nuxt
+$ lando npm run dev
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+[Nuxt.js docs](https://nuxtjs.org).
