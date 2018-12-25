@@ -18,16 +18,31 @@
           target="_blank"
           class="button--grey">GitHub</a>
       </div>
+      <PageIndex v-bind="{pages}"/>
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from '~/components/Logo.vue';
+import PageIndex from '~/components/PageIndex.vue';
+
+import {
+  loadPages,
+} from '~/lib/api';
 
 export default {
   components: {
-    Logo
+    Logo,
+    PageIndex
+  },
+  async asyncData({ params }) {
+    let pages = [];
+    pages = await loadPages();
+    console.log(pages.data);
+    return {
+      pages: pages.data
+    };
   }
 }
 </script>
