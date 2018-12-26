@@ -1,7 +1,7 @@
 <template>
   <div class="PageTitleLink">
-    <a :href="'http://drupal.drupal-nuxt.lndo.site/jsonapi/node/page/' + page.attributes.id">
-      {{ page.attributes.title }}
+    <a :href="'http://drupal.drupal-nuxt.lndo.site/jsonapi/node/page/' + page.id">
+      {{ page.title }}
     </a>
   </div>
 </template>

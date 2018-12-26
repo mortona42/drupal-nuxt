@@ -1,5 +1,6 @@
 <template>
   <section class="container">
+    <Header v-bind="{ site }" />
     <div>
       <Menus v-bind="{ menus }" />
     </div>
@@ -33,26 +34,31 @@
 import Logo from '~/components/Logo.vue';
 import PageIndex from '~/components/PageIndex.vue';
 import Menus from '~/components/Menus.vue';
+import Header from '~/components/Header.vue';
 
 import {
   loadPages,
-  mainMenu
+  mainMenu,
+  loadSite
 } from '~/lib/api';
 
 export default {
   components: {
     Logo,
     PageIndex,
-    Menus
+    Menus,
+    Header
   },
   async asyncData({ params }) {
     return Promise.all([
       mainMenu(),
       loadPages(),
+      loadSite()
     ]).then(values => {
       return {
         menus: values[0],
         pages: values[1],
+        site: values[2]
       };
     });
   }
