@@ -1,40 +1,34 @@
 <template>
-  <section class="container">
-    <Header v-bind="{ site }" />
-    <div>
-      <Menus v-bind="{ menus }" />
-    </div>
-    <div>
-      <logo/>
-      <h1 class="title">
-        Drupal/Nuxt
-      </h1>
-      <h2 class="subtitle">
-        Drupal/Nuxt starter.
-      </h2>
-      <div class="links">
-        <a
-          href="https://github.com/mortona42/drupal-nuxt/wiki"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/mortona42/drupal-nuxt"
-          target="_blank"
-          class="button--grey">GitHub</a>
+  <div>
+    <section class="container">
+    <Menus v-bind="{ menus }" />
+      <div>
+        <Logo/>
+        <Site v-bind="{site}"/>
+        <div class="links">
+          <a
+            href="https://github.com/mortona42/drupal-nuxt/wiki"
+            target="_blank"
+            class="button--green">Documentation</a>
+          <a
+            href="https://github.com/mortona42/drupal-nuxt"
+            target="_blank"
+            class="button--grey">GitHub</a>
+        </div>
+        <div class="pages">
+          <h3>Pages</h3>
+          <PageIndex v-bind="{ pages }" />
+        </div>
       </div>
-      <div class="pages">
-        <h3>Pages</h3>
-        <PageIndex v-bind="{ pages }" />
-      </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>
 import Logo from '~/components/Logo.vue';
+import Site from '~/components/Site.vue';
 import PageIndex from '~/components/PageIndex.vue';
 import Menus from '~/components/Menus.vue';
-import Header from '~/components/Header.vue';
 
 import {
   loadPages,
@@ -45,9 +39,9 @@ import {
 export default {
   components: {
     Logo,
+    Site,
     PageIndex,
-    Menus,
-    Header
+    Menus
   },
   async asyncData({ params }) {
     return Promise.all([
@@ -70,28 +64,12 @@ export default {
 .container {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
 
 .links {
   padding: 15px;
